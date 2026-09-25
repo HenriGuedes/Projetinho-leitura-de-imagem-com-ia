@@ -1,0 +1,154 @@
+/* Inclui bordas e espaçamentos no tamanho total dos elementos. */
+* {
+  /* Evita que padding e borda aumentem a largura definida. */
+  box-sizing: border-box;
+}
+
+/* Estiliza o fundo e centraliza o conteúdo da página. */
+body {
+  /* Faz o corpo ocupar pelo menos a altura da tela. */
+  min-height: 100vh;
+  /* Remove a margem padrão do navegador. */
+  margin: 0;
+  /* Cria espaço ao redor do conteúdo. */
+  padding: 24px;
+  /* Usa grade para centralizar o conteúdo. */
+  display: grid;
+  /* Centraliza horizontal e verticalmente. */
+  place-items: center;
+  /* Define a cor de fundo. */
+  background: #f2f7f3;
+  /* Define a cor padrão do texto. */
+  color: #26352c;
+  /* Define a fonte da página. */
+  font-family: Arial, sans-serif;
+}
+
+/* Limita a largura e centraliza o conteúdo principal. */
+.container {
+  /* Ocupa a largura disponível. */
+  width: 100%;
+  /* Evita que o conteúdo fique largo demais. */
+  max-width: 460px;
+  /* Centraliza o texto. */
+  text-align: center;
+}
+
+/* Estiliza o título principal. */
+h1 {
+  /* Remove as margens padrão. */
+  margin: 0;
+  /* Define a cor do título. */
+  color: #176b45;
+  /* Define o tamanho do título. */
+  font-size: 2.3rem;
+}
+
+/* Estiliza o texto abaixo do título. */
+.descricao {
+  /* Define o espaço ao redor do texto. */
+  margin: 10px 0 28px;
+  /* Usa uma cor mais suave. */
+  color: #65736a;
+  /* Melhora a leitura das linhas. */
+  line-height: 1.5;
+}
+
+/* Cria o cartão com o resumo dos gastos. */
+.resumo {
+  /* Adiciona espaço dentro do cartão. */
+  padding: 24px;
+  /* Desenha uma borda discreta. */
+  border: 1px solid #e0e9e2;
+  /* Arredonda os cantos. */
+  border-radius: 16px;
+  /* Define o fundo branco. */
+  background: #fff;
+}
+
+/* Estiliza o rótulo e a contagem do resumo. */
+.rotulo,
+.contagem {
+  /* Remove as margens padrão dos parágrafos. */
+  margin: 0;
+  /* Define uma cor de texto suave. */
+  color: #65736a;
+}
+
+/* Destaca o valor total gasto. */
+.valor {
+  /* Define o espaço acima e abaixo do valor. */
+  margin: 8px 0;
+  /* Usa a cor verde principal. */
+  color: #176b45;
+  /* Aumenta o tamanho do valor. */
+  font-size: 2.5rem;
+  /* Deixa o valor em negrito. */
+  font-weight: bold;
+}
+
+/* Dá aparência de botão ao rótulo do campo de arquivo. */
+.upload {
+  /* Faz o rótulo ocupar uma linha inteira. sem ocupar o espaço da llinha de outro elemento  */
+  display: block;
+  /* Separa o rótulo do cartão. */
+  margin-top: 20px;
+  /* Adiciona espaço interno. */
+  padding: 14px;
+  /* Cria uma borda tracejada. */
+  border: 1px dashed #81ad8e;
+  /* Arredonda os cantos. */
+  border-radius: 12px;
+  /* Define o fundo branco. */
+  background: #fff;
+  /* Define a cor do texto. */
+  color: #176b45;
+  /* Mostra que o rótulo pode ser clicado. */
+  cursor: pointer;
+}
+.upload:hover {
+  background-color: #23915f;
+  color: #f2f7f3;
+}
+
+/* Esconde visualmente o campo sem removê-lo do acesso por teclado. */
+input[type="file"] {
+  /* Retira o campo do fluxo normal da página. */
+  position: absolute;
+  /* Reduz a largura do campo. */
+  width: 1px;
+  /* Reduz a altura do campo. */
+  height: 1px;
+  /* Esconde o conteúdo que ultrapassa o campo. */
+  overflow: hidden;
+  /* Recorta o campo para deixá-lo invisível. */
+  clip: rect(0, 0, 0, 0);
+  /* Impede quebra de linha no conteúdo. */
+  white-space: nowrap;
+  /* Esconde o campo visualmente. */
+  clip-path: inset(50%);
+}
+
+/* Destaca o rótulo quando o campo recebe foco pelo teclado. */
+input[type="file"]:focus-visible + .upload {
+  /* Desenha um contorno de foco. */
+  outline: 2px solid #176b45;
+}
+
+/* Ajusta os tamanhos e espaçamentos em telas pequenas. */
+@media (max-width: 480px) {
+  /* Reduz o espaço nas laterais em celulares. */
+  body {
+    padding: 20px 16px;
+  }
+
+  /* Reduz o título em telas pequenas. */
+  h1 {
+    font-size: 2rem;
+  }
+
+  /* Ajusta o valor para caber melhor no celular. */
+  .valor {
+    font-size: 2.2rem;
+  }
+}

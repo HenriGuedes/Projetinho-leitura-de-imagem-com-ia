@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://js.puter.com/v2/"></script>
+    <!-- putter ia  -->
+    <title>Gastos na Foto</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Gastos na Foto</h1>
+      <p class="descricao">Fotografe o comprovante. A IA anota para você.</p>
+
+      <section class="resumo" aria-label="Resumo de gastos">
+        <p class="rotulo">Total gasto</p>
+        <p class="valor">R$ 0,00</p>
+        <p class="contagem">0 comprovantes lidos</p>
+      </section>
+
+      <input
+        class="Foto"
+        id="comprovante"
+        type="file"
+        onchange="lerAFoto()"
+        accept="image/*"
+      />
+
+      <label class="upload" for="comprovante"
+        >Escolha uma foto do comprovante</label
+      >
+
+      <div class="lista"></div>
+    </main>
+  </body>
+  <script src="./index.js"></script>
+</html>
